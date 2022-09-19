@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-12">
+      <% flash.get('mensaje').forEach(function (msg) {%>
+      <div class="alert alert-info" role="alert"><%=msg%></div>
+      <%})%>
+  
+      <h2>Admin - Clientes</h2>
+  
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Ordenes</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% ordenes.forEach(orden => {%>
+            <tr>
+              <td scope="row"><%=orden.id%></td>
+              <td scope="row"><%=orden.nombre%></td>
+              <td scope="row"><a class="nav-link" href="/admin/ordenes/<%=orden.id%>"><i class="fas fa-receipt"></i>&nbsp <%=orden.ordenes%></a></td>
+              <td scope="row">
+                  <%if(orden.estado == true){%>
+                    <p>Activo &nbsp
+                    <a href="/admin/procesar-estado-cliente/<%=orden.id%>" class="btn btn-primary">Desactivar</a>
+                </p>
+                </td>
+                  <%}else{%>
+                    <p>
+                    No Activo &nbsp
+                    <a href="/admin/procesar-estado-cliente/<%=orden.id%>" class="btn btn-primary">Activar</a>
+                </p>
+                </td>
+                  <%}%>
+            </tr>
+            <%})%>
+          </tbody>
+        </table>
+      </div>
+  </div>

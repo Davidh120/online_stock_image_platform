@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-12">
+      <% flash.get('mensaje').forEach(function (msg) {%>
+      <div class="alert alert-info" role="alert"><%=msg%></div>
+      <%})%>
+  
+      <h2>Admin - Dashboard</h2>
+  
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Total Clientes</th>
+              <th>Total Fotos</th>
+              <th>Total Ordenes</th>
+              <th>Total Administradores</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%=clientes.length%></td>
+              <td><%=fotos.length%></td>
+              <td><%=ordenes.length%></td>
+              <td><%=admins.length%></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>

@@ -1,4 +1,4 @@
-# tienda
+# Online stock image platform
 
 a [Sails v1](https://sailsjs.com) application
 
